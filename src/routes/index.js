@@ -9,11 +9,11 @@ const clean = fileName.split('.').shift()// TODO [video.js]
 return clean;
 };
 // TODO [index.js, video.js]
-  fs.readdirSync(PATH_ROUTER).filter(fileName =>{
-    const prefixRoute = cleanFileName(fileName)
+  fs.readdirSync(PATH_ROUTER).filter((fileName) => {
+    const prefixRoute = cleanFileName(fileName);
     if(prefixRoute !== 'index'){
         console.log(`cargando la ruta... ${prefixRoute}`)
-    router.use(`./${prefixRoute}`,require(`./${prefixRoute}`))
+    router.use(`/${prefixRoute}`, require(`./${prefixRoute}.js`));
     }
 
 });
