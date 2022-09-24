@@ -1,5 +1,8 @@
+const {getAllVideos} =require("../services/video.service")
+
 const getList = (req,res)=>{
-res.send({data: "list"});
+
+res.send({data: getAllVideos()});
 }
 const getDetail = (req,res)=>{
 res.send({data: "detail"});
